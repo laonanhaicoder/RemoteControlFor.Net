@@ -1,0 +1,8 @@
+D:\RemoteControlgithub\RemoteControl\Terminal\obj\Debug\TerminalCommunication.csproj.GenerateResource.cache
+D:\RemoteControlgithub\RemoteControl\Terminal\obj\Debug\TerminalCommunication.csproj.CoreCompileInputs.cache
+D:\RemoteControlgithub\RemoteControl\Terminal\obj\Debug\TerminalCommunication.Operator.resources
+D:\RemoteControlgithub\RemoteControl\Terminal\obj\Debug\TerminalCommunication.Properties.Resources.resources
+D:\RemoteControlgithub\RemoteControl\Terminal\bin\Debug\TerminalCommunication.dll
+D:\RemoteControlgithub\RemoteControl\Terminal\bin\Debug\TerminalCommunication.pdb
+D:\RemoteControlgithub\RemoteControl\Terminal\obj\Debug\TerminalCommunication.dll
+D:\RemoteControlgithub\RemoteControl\Terminal\obj\Debug\TerminalCommunication.pdb

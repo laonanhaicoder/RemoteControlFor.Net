@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D153A74E-7571-4578-823D-87B8D85BA7CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TerminalCommunication</RootNamespace>
+    <AssemblyName>TerminalCommunication</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Message\AllowControlMessage.cs" />
+    <Compile Include="Message\ClipboardMessage.cs" />
+    <Compile Include="Message\CursorInfoMessage.cs" />
+    <Compile Include="Message\DefinitionMessage.cs" />
+    <Compile Include="Message\DelayTestMessage.cs" />
+    <Compile Include="Message\FrameDirtyMessage.cs" />
+    <Compile Include="Message\ScreenFrameMessage.cs" />
+    <Compile Include="Message\KeyboardMessage.cs" />
+    <Compile Include="Message\MessageBase.cs" />
+    <Compile Include="Message\MessageFactory.cs" />
+    <Compile Include="Message\MessageType.cs" />
+    <Compile Include="Message\MouseMessage.cs" />
+    <Compile Include="Message\ScreenInfoMessage.cs" />
+    <Compile Include="Message\VisualRegionMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Terminal\Host.cs" />
+    <Compile Include="Terminal\Operator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Terminal\Operator.Designer.cs">
+      <DependentUpon>Operator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transmission\ITransfer.cs" />
+    <Compile Include="Transmission\TcpTransfer.cs" />
+    <Compile Include="Transmission\TransferEventArgs.cs" />
+    <Compile Include="Utils\Action.cs" />
+    <Compile Include="Terminal\Primitive\ClipboardChangeNotifier.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\Configure.cs" />
+    <Compile Include="Terminal\Primitive\DoubleBufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\IDBuilder.cs" />
+    <Compile Include="Utils\Timestamp.cs" />
+    <Compile Include="Terminal\Primitive\ToggleButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\WinApis.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terminal\Operator.resx">
+      <DependentUpon>Operator.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_close_sound_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_close_sound_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fixed_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fixed_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fluent_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fluent_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fullscreen_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_fullscreen_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_highdef_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_highdef_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_notfixed_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_notfixed_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_sound_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_sound_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_window_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_window_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkg11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flowdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flownone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flowup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flowupdown.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
